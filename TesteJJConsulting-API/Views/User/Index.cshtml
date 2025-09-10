@@ -1,0 +1,35 @@
+﻿@model List<VisualizarUsuarios>
+@{
+    ViewData["Title"] = "User Page";
+}
+
+<section class="container"
+    <div class="display-8">
+        <h1 class="text-center">Tabela com todos os usuarios da API</h1>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Cidade</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                @foreach (var usuario in Model)
+                {
+                <tr>
+                    <td>@usuario.id</td>
+                    <td>@usuario.name</td>
+                    <td>@usuario.username</td>
+                    <td>@usuario.email</td>
+                    <td>@usuario.address?.city</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

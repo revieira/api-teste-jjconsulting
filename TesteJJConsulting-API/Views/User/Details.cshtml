@@ -1,0 +1,47 @@
+﻿@model TesteJJConsulting_API.Models.ExibirDetalheUsuario
+@{
+    ViewData["Title"] = "Details Page";
+}
+<section class="container"
+    <div class="display-8">
+        <h1 class="display-8 text-center">Tabela com o usuario @Model.id</h1>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Endereco</th>
+                    <th>Complemento</th>
+                    <th>Cidade</th>
+                    <th>CEP</th>
+                    <th>Contato</th>
+                    <th>Website</th>
+                    <th>Empresa</th>
+                    <th>Captura</th>
+                    <th>Topicos</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <tr>
+                    <td>@Model.id</td>
+                    <td>@Model.name</td>
+                    <td>@Model.username</td>
+                    <td>@Model.email</td>
+                    <td>@Model.address?.street</td>
+                    <td>@Model.address?.suite</td>
+                    <td>@Model.address?.city</td>
+                    <td>@Model.address?.zipcode</td>
+                    <td>@Model.phone</td>
+                    <td>@Model.website</td>
+                    <td>@Model.company?.name</td>
+                    <td>@Model.company?.catchPhrase</td>
+                    <td>@Model.company?.bs</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

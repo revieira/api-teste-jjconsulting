@@ -1,0 +1,17 @@
+﻿@model List<VisualizarUsuarios>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="container"
+    <div class="display-8">
+        <h1 class="text-center">Lista dos endpoints</h1>
+    </div>
+    <div class="display-8">
+        <ul>
+            <li>Listar todos os usuarios: <a asp-area="" asp-controller="User" asp-action="Index">api/user</a></li>
+            <li>Buscar usuario pelo ID(se id for omitido ou não existir, inicializa pelo id=1): <a asp-area="" asp-controller="User" asp-action="Details">api/user/details/{id}</a></li>
+        </ul>
+
+    </div>
+</section>

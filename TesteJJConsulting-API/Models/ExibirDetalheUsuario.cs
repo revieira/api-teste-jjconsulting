@@ -1,0 +1,36 @@
+using System.Text.Json.Serialization;
+using TesteJJConsulting_API.Services;
+
+namespace TesteJJConsulting_API.Models
+{
+    public class Address
+    {
+        public string? street { get; set; }
+        public string? suite { get; set; }
+        public string? city { get; set; }
+        public string? zipcode { get; set; }
+    }
+    public class Company
+    {
+        public string? name { get; set; }
+        public string? catchPhrase { get; set; }
+        public string? bs { get; set; }
+    }
+    public class ExibirDetalheUsuario
+    {
+        public int id { get; set; }
+        public string? name { get; set; }
+        public string? username { get; set; }
+        public string? email { get; set; }
+        public Address? address { get; set; }
+        public string? phone { get; set; }
+        public string? website { get; set; }
+        public Company? company { get; set; }
+
+        public async Task<ExibirDetalheUsuario?> GetUserById(int id)
+        {
+            var users = await ApiServices.GetAsyncUserById(id);
+            return users.FirstOrDefault();
+        }
+    }
+}
